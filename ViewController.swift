@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var mealLabel: UILabel!
     @IBOutlet weak var textFieldMeal: UITextField!
     @IBOutlet weak var viewImage: UIImageView!
+    @IBOutlet weak var ratingControl: RatingControl!
     
     
     override func viewDidLoad() {
@@ -42,7 +43,5 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         viewImage.image = selectedImage
         dismiss(animated: true, completion: nil)
     }
-    
-    
 }
 

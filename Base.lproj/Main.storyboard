@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SKz-Gc-CcE">
-                                <rect key="frame" x="20" y="64" width="394" height="487.5"/>
+                                <rect key="frame" x="20" y="64" width="394" height="539.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpy-J0-32K">
-                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="25.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpy-J0-32K">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="25.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -34,8 +34,8 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atX-lV-tCs">
-                                        <rect key="frame" x="0.0" y="75.5" width="151" height="30"/>
-                                        <state key="normal" title="Set Default Label Text"/>
+                                        <rect key="frame" x="0.0" y="75.5" width="104" height="30"/>
+                                        <state key="normal" title="Set Meal Name"/>
                                         <connections>
                                             <action selector="setName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k8z-oL-ivK"/>
                                         </connections>
@@ -50,8 +50,13 @@
                                             <outletCollection property="gestureRecognizers" destination="4wE-E1-TE1" appends="YES" id="w0w-bR-0Jl"/>
                                         </connections>
                                     </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gow-zs-eSy" customClass="RatingControl" customModule="FootTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="495.5" width="252" height="44"/>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Rpy-J0-32K" secondAttribute="trailing" constant="20" id="4lm-dx-P85"/>
+                                    <constraint firstItem="Rpy-J0-32K" firstAttribute="leading" secondItem="SKz-Gc-CcE" secondAttribute="leading" id="5pN-Gx-UIC"/>
                                     <constraint firstAttribute="trailing" secondItem="8aC-jn-osY" secondAttribute="trailing" constant="20" id="6MX-Ud-ams"/>
                                     <constraint firstAttribute="trailing" secondItem="isb-UP-V8a" secondAttribute="trailing" constant="20" id="85Z-X4-GQe"/>
                                 </constraints>
@@ -67,6 +72,7 @@
                     </view>
                     <connections>
                         <outlet property="mealLabel" destination="Rpy-J0-32K" id="lu0-h8-pdV"/>
+                        <outlet property="ratingControl" destination="Gow-zs-eSy" id="NfF-wI-6lO"/>
                         <outlet property="textFieldMeal" destination="8aC-jn-osY" id="Q3g-8S-xhR"/>
                         <outlet property="viewImage" destination="isb-UP-V8a" id="NWQ-VK-lgV"/>
                     </connections>
