@@ -46,13 +46,16 @@ class MealTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return meals.count
+    }
+    
+    //size once cell
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
     }
 
     
@@ -62,9 +65,7 @@ class MealTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MealTableViewCell  else {
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
         }
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
             
-        // Fetches the appropriate meal for the data source layout.
         let meal = meals[indexPath.row]
             
         cell.nameLabel.text = meal.name
